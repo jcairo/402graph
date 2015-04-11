@@ -4,13 +4,15 @@
 * Checks/saves login credentials.
 */
 angular.module('graph')
-.service('UserService', function ($http) {
-    var user = {};
+.service('UserService', function ($http, appConstants) {
     return {
+        user: {},
+
         checkCreds: function (username, password) {
+            var self = this;
             var req = {
                 method: 'GET',
-                url:'http://localhost:5000/api/credcheck',
+                url: appConstants.host + '/api/credcheck',
                 headers: {
                     'user': username,
                     'password': password,
@@ -19,9 +21,9 @@ angular.module('graph')
 
             return $http(req)
                 .success( function () {
-                    $http.defaults.headers.common.user = username;
-                    $http.defaults.headers.common.password = password;
-                    user.loggedIn = true;
+                    self.user.username = username;
+                    self.user.password = password;
+                    self.user.loggedIn = true;
             });
         }
     };

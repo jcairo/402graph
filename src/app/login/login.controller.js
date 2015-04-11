@@ -5,13 +5,10 @@ angular.module('graph')
   $scope.login = function(username, password) {
     UserService.checkCreds(username, password)
       .success( function (data) {
-        // Redirect to dashboard.
         $state.go('graph');
-
       })
       .error( function (data) {
         // Promprt for login again.
-
       });
   };
 });

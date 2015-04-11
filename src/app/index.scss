@@ -6,6 +6,19 @@
     }
 }
 
+.author-search-form {
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
 
+.ui-view-container {
+    position: relative;
+    height: 100%;
+}
+
+.search-wrapper {
+    width: 100%;
+    border-bottom: 1px solid lightgrey;
+}
 // injector
 // endinjector
