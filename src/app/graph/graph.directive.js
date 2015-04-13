@@ -20,8 +20,8 @@ angular.module('graph')
             var color = d3.scale.category20();
 
             var force = d3.layout.force()
-                .charge(-1200)
-                .linkDistance(150)
+                .charge(-1500)
+                .linkDistance(200)
                 .size([width, height]);
 
             var svg = d3.select("body").append("svg")
@@ -47,18 +47,15 @@ angular.module('graph')
               .attr("class", "node")
               .attr("r", function (d) { return d.h_index; })
               .style("fill", function(d) { return color(d.h_index); })
-              .on("click", click)
               .call(force.drag);
 
             var texts = svg.selectAll("text.label")
-                .data(mockData.data.nodes)
-                .enter().append("text")
-                .attr("class", "label")
-                .attr("fill", "black")
-                .text(function(d) {  return d.author_name;  });
-
-            node.append("title")
-              .text(function(d) { return d.author_name; });
+              .data(mockData.data.nodes)
+              .enter().append("text")
+              .on("click", click)
+              .attr("class", "label")
+              .attr("fill", "black")
+              .text(function(d) {  return d.author_name;  });
 
             force.on("tick", function() {
             link.attr("x1", function(d) { return d.source.x; })
