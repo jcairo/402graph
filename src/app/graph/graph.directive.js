@@ -20,13 +20,13 @@ angular.module('graph')
             var color = d3.scale.category20();
 
             var force = d3.layout.force()
-                .charge(-1500)
-                .linkDistance(200)
-                .size([width, height]);
+              .charge(-1500)
+              .linkDistance(200)
+              .size([width, height]);
 
             var svg = d3.select("body").append("svg")
-                .attr("width", '100%')
-                .attr("height", height);
+              .attr("width", '100%')
+              .attr("height", height);
 
             force
               .nodes(mockData.data.nodes)
@@ -38,8 +38,6 @@ angular.module('graph')
               .enter().append("line")
               .attr("class", "link")
               .style("stroke-width", function(d) { return Math.sqrt(d.value); });
-
-
 
             var node = svg.selectAll(".node")
               .data(mockData.data.nodes)
