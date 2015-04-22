@@ -7,7 +7,8 @@
           </label>
         </span>
         </br>
-        <span class="input input--hoshi" ng-class="{ 'input--filled': password }">
+
+        <span ng-show="username" class="input input--hoshi" ng-class="{ 'input--filled': password }">
           <input class="input__field input__field--hoshi" type="password" id="input-5"ng-model="password">
           <label class="input__label input__label--hoshi input__label--hoshi-color-2" for="input-5" >
             <span class="input__label-content input__label-content--hoshi">Password</span>
@@ -17,7 +18,7 @@
 
         <div class="form-group button-group">
           <div class="text-center">
-            <button type="submit" class="btn btn-primary" ng-click="login(username, password)" >Sign in</button>
+            <button ng-show="password && username" type="submit" class="btn btn-warning" ng-click="login(username, password)" >Sign in</button>
           </div>
         </div>
       </section>

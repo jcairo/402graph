@@ -21,8 +21,11 @@
 }
 
 .search-wrapper {
+  margin-top: 5%;
+  padding-bottom: 5%;
   width: 100%;
   border-bottom: 1px solid lightgrey;
+  text-align: center;
 }
 
 .header-wrapper {
@@ -38,9 +41,26 @@
   stroke-opacity: .6;
 }
 
+.btn-warning {
+  border-radius: 0px;
+  background-color: #545145;
+}
+
+.btn-warning:hover {
+  background-color: #FFA66F;
+}
+
 text.label {
   font-size: 14px;
   font-weight: bold;
+}
+
+button {
+  transition: all 2s ease;
+}
+
+button.ng-leave, button.ng-enter {
+  opacity: 0;
 }
 
 .input {
