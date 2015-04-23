@@ -6,6 +6,14 @@
   }
 }
 
+body {
+  background-color: #ECECEC;
+}
+
+svg {
+  background-color: whitesmoke;
+}
+
 .button-group {
   margin-top: 5%;
 }
@@ -28,7 +36,7 @@
 }
 
 .graph {
-  border: 2px solid black;
+  border: 3px solid rgb(0, 170, 255);
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -44,7 +52,7 @@
 
 .link {
   stroke: lightgrey;
-  stroke-opacity: .6;
+  stroke-opacity: .8;
 }
 
 .btn-warning {
