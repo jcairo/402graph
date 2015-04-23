@@ -25,22 +25,22 @@ angular.module('graph')
               .size([width, height]);
 
             var svg = d3.select("body").append("svg")
-              .attr("width", '100%')
+              .attr("width", width)
               .attr("height", height);
 
             force
-              .nodes(mockData.data.nodes)
-              .links(mockData.data.links)
+              .nodes(data.nodes)
+              .links(data.links)
               .start();
 
             var link = svg.selectAll(".link")
-              .data(mockData.data.links)
+              .data(data.links)
               .enter().append("line")
               .attr("class", "link")
               .style("stroke-width", function(d) { return Math.sqrt(d.value); });
 
             var node = svg.selectAll(".node")
-              .data(mockData.data.nodes)
+              .data(data.nodes)
               .enter().append("circle")
               .attr("class", "node")
               .attr("r", function (d) { return d.h_index; })
@@ -48,7 +48,7 @@ angular.module('graph')
               .call(force.drag);
 
             var texts = svg.selectAll("text.label")
-              .data(mockData.data.nodes)
+              .data(data.nodes)
               .enter().append("text")
               .on("click", click)
               .attr("class", "label")

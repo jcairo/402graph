@@ -13,9 +13,13 @@ angular.module('graph')
                     '/network' +
                     '/' + 'node_link_data',
                 headers: {
-                    'user': 'cmput402',
-                    'password': 'qpskcnvb'
+                    'user': UserService.user.username,
+                    'password': UserService.user.password
                 }
+                //headers: {
+                //    'user': 'cmput402',
+                //    'password': 'qpskcnvb'
+                //}
             };
             return $http(req);
         }
