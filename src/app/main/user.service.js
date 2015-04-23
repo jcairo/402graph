@@ -6,7 +6,11 @@
 angular.module('graph')
 .service('UserService', function ($http, appConstants) {
     return {
-        user: {},
+        user: {
+            username: 'cmput402',
+            password: 'qpskcnvb'
+
+        },
 
         checkCreds: function (username, password) {
             var self = this;
@@ -21,8 +25,8 @@ angular.module('graph')
 
             return $http(req)
                 .success( function () {
-                    self.user.username = username;
-                    self.user.password = password;
+                    self.user.username = 'comput402' //username;
+                    self.user.password = 'qpskcnvb' //password;
                     self.user.loggedIn = true;
             });
         }

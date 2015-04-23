@@ -6,6 +6,10 @@ angular.module('graph')
         restrict: 'E',
         replace: false,
         link: function (scope, element, attrs) {
+
+            d3.select("svg")
+              .remove();
+
             var click = function (node) {
               console.log(node);
               var win = window.open(node.author_url, '_blank');
@@ -26,7 +30,8 @@ angular.module('graph')
 
             var svg = d3.select("body").append("svg")
               .attr("width", width)
-              .attr("height", height);
+              .attr("height", height)
+              .attr("class", "graph");
 
             force
               .nodes(data.nodes)

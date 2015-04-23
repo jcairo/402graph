@@ -24,8 +24,14 @@
   margin-top: 5%;
   padding-bottom: 5%;
   width: 100%;
-  border-bottom: 1px solid lightgrey;
   text-align: center;
+}
+
+.graph {
+  border: 2px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .header-wrapper {
