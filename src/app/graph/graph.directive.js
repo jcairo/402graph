@@ -25,8 +25,9 @@ angular.module('graph')
               .size([width, height]);
 
             var svg = d3.select("body").append("svg")
-              .attr("width", '100%')
-              .attr("height", height);
+              .attr("width", width)
+              .attr("height", height)
+              .attr("class", "graph");
 
             force
               .nodes(mockData.data.nodes)
